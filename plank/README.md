@@ -12,5 +12,3 @@ gdb ./plan_debug
 (gdb) run < <(echo "(0 5 (#2 4))")
 <...>
 ```
-
-Copyright: Isaac Visintainer
