@@ -82,6 +82,7 @@
           ];
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath devPkgs;
         };
+        devShells.plankShell = import ./plank/shell.nix { inherit pkgs; };
 
         packages = rec {
           plunder = flake.packages."plunder:exe:plunder";
@@ -89,6 +90,7 @@
           rex = flake.packages."plunder:exe:rex";
           default = plunder;
           hnix-roots = pkgs.plunder.roots;
+          plank = import ./plank/default.nix { inherit pkgs; };
         };
 
       });
